@@ -15,6 +15,6 @@ class Ability
     can :create, Bid
     cannot :create, Bid, auction: {user: user}
 
-    can :update, Auction, user_id: user.id
+    can :manage, Auction, user_id: user.id
   end
 end

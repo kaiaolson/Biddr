@@ -3,7 +3,8 @@
 <p><%= @auction.details %></p>
 <%= @auction.state_label %>
 <br><br>
-<% if can? :update, @auction %>
+<%# this doesn't work and i have no idea why  %>
+<% if can? :manage, @auction %>
 <%= @auction.publish_button %>
 <% end %>
 <p>End Date: <%= @auction.end_date %></p>
