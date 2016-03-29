@@ -1,0 +1,13 @@
+<%= form_tag sessions_path do %>
+  <%= content_tag(:div, class: "form-group") do %>
+    <%= label_tag :email %>
+    <%= email_field_tag :email, nil, class: "form-control"  %>
+  <% end %>
+  <%= content_tag(:div, class: "form-group") do %>
+    <%= label_tag :password %>
+    <%= password_field_tag :password, nil, class: "form-control" %>
+  <% end %>
+  <%= content_tag(:div, class: "form-group") do %>
+    <%= submit_tag "Log in", class: "btn btn-primary" %>
+  <% end %>
+<% end %>

@@ -1,0 +1,7 @@
+<h1>Your Bids</h1>
+<% @bids.each do |bid| %>
+  <div class="well">
+    <h3><%= number_to_currency(bid.amount) %> on <%= bid.auction_title %> at <%= bid.created_at.strftime("%D") %></h3>
+    <p>Current Auction Price for <%= bid.auction_title %>: <%= number_to_currency(bid.auction_current) %></p>
+  </div>
+<% end %>

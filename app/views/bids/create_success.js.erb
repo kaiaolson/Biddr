@@ -1,0 +1,5 @@
+$("<%= j render 'bid', bid: @bid %>").appendTo("#bids").hide().fadeIn(500);
+$("#current_price").html("Current Price: <%= j @auction.current_price %>");
+$("#state").replaceWith("<%= j @auction.state_label %>");
+<% @bid = Bid.new %>
+$("#bid-form").html("<%= j render 'form', bid: @bid %>");

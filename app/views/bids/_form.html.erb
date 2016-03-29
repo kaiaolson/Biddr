@@ -1,0 +1,26 @@
+<div id="bid-form">
+  <%= simple_form_for [@auction, @bid] do |f| %>
+    <%= f.input :amount, as: :string %>
+    <%= f.submit class: "btn btn-primary bid-submit" %>
+  <% end %>
+</div>
+
+<script>
+  $(document).ready(function(){
+    $("input.bid-submit").click(function(event){
+      event.preventDefault();
+      $.ajax({
+        type: "POST",
+        url: $("div#bid-form form").attr("action"),
+        data: { bid: { amount: $("input#bid_amount").val() } },
+        dataType: "script",
+        success: function(data) {
+          return true
+        },
+        error: function(data) {
+          return false
+        }
+      })
+    });
+  });
+</script>

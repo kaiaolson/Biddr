@@ -1,0 +1,23 @@
+<h1><%= @auction.title %></h1>
+
+<p><%= @auction.details %></p>
+<%= @auction.state_label %>
+<br><br>
+<% if can? :update, @auction %>
+<%= @auction.publish_button %>
+<% end %>
+<p>End Date: <%= @auction.end_date %></p>
+<p>Reserve Price: <%= @auction.reserve_price %></p>
+<p id="current_price">Current Price: <%= @auction.current_price %></p>
+
+<div class="col-sm-6">
+<h2>Bids:</h2>
+  <%= render "bids/all_bids" %>
+</div>
+
+<% if can? :create, @bid %>
+<div class="col-sm-6">
+<h2>Create Bid: </h2>
+  <%= render "bids/form" %>
+</div>
+<% end %>

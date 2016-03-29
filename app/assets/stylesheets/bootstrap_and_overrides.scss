@@ -1,0 +1,10 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+body {
+ padding: 20px 0px;
+}
+
+textarea, input, select {
+ max-width: 400px;
+}

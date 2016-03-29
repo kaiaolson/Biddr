@@ -1,0 +1,13 @@
+<%= simple_form_for @auction do |f| %>
+  <%= f.input :title %>
+  <%= f.input :details %>
+  <%= f.input :end_date, as: :string, input_html: { class: "datepicker" } %>
+  <%= f.input :reserve_price, as: :string %>
+  <%= f.submit class: "btn btn-primary" %>
+<% end %>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('input.datepicker').data({behaviour: "datepicker"}).datepicker({ format: 'yyyy-mm-dd' });
+  });
+</script>
